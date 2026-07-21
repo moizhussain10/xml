@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="style.css" type="text/css"?>
+
+<!DOCTYPE root-element [
+    <!ELEMENT root-element (office)>
+    <!ELEMENT office (department)>
+    <!ELEMENT department (employee+)>
+    <!ELEMENT employee (name, designation)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT designation (#PCDATA)>
+
+    <!ATTLIST department status CDATA "active">
+    <!ATTLIST employee country CDATA #FIXED "Pakistan">
+    <!ATTLIST employee id CDATA #IMPLIED>
+]>
+<root-element>
+    <office>
+        <department status="unactive">
+            <employee id="abc">
+                <name>moiz</name>
+                <designation>software engineer</designation>
+            </employee>
+
+            <employee id="abc">
+                <name>Ali</name>
+                <designation>software engineer</designation>
+            </employee>
+        </department>
+    </office>
+</root-element>
